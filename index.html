@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kokshOS</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Фон с клоуном и фильтром */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('image_2.png'); /* Фоновый клоун */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* Очень прозрачный, чтобы не мешал тексту */
+            filter: blur(5px);
+            z-index: -2;
+        }
+
+        /* Оверлей маджента/лайм */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(0, 255, 0, 0.1));
+            z-index: -1;
+        }
+
+        header {
+            padding: 100px 20px 80px 20px;
+            border-bottom: 3px solid #00ff00;
+            background: rgba(17, 17, 17, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.1);
+        }
+
+        h1 img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            text-shadow: 0 0 20px #00ff00;
+        }
+
+        p.subtitle {
+            font-size: 1.5em;
+            color: #ff00ff; /* Маджента */
+            margin-top: 10px;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px 20px;
+        }
+
+        .feature-card {
+            border: 2px solid #ff00ff; /* Маджента */
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            background: rgba(0, 255, 0, 0.1); /* Прозрачный лайм */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px #00ff00;
+        }
+
+        .feature-card h2 {
+            margin-top: 0;
+            color: #00ff00; /* Лайм */
+            text-shadow: 0 0 5px #00ff00;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 40px;
+            padding: 20px 50px;
+            font-size: 1.8em;
+            color: #0a0a0a;
+            background-color: rgba(255, 0, 255, 0.8); /* Полупрозрачный маджента */
+            border: 2px solid #ff00ff; /* Маджента */
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 40px #00ff00;
+            border-color: #00ff00;
+        }
+
+        footer {
+            padding: 30px;
+            font-size: 1em;
+            color: #555;
+            border-top: 1px solid #333;
+            background: #111;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><img src="image_0.png" alt="kokshOS Logo"></h1>
+        <p class="subtitle">Настоящая ОС для тех, кто не боится... всего</p>
+    </header>
+
+    <main>
+        <section class="features">
+            <div class="feature-card">
+                <h2>🚀 Абсолютная защита</h2>
+                <p>100% защита от хакеров: архитектура системы настолько абсурдна, что её невозможно взломать даже создателю.</p>
+            </div>
+            <div class="feature-card">
+                <h2>📦 Инновационная покупка флешек и записи образов</h2>
+                <p>kokshOS даёт ярлык которая вас перенапрявляет в магазин, а также установлены программы для записи образов.</p>
+            </div>
+            <div class="feature-card">
+                <h2>📦 Анти-Майнкрафт инженерия</h2>
+                <p>Каждое ядро процессора ненавидит Майнкрафт больше, чем сам создатель. Попробуйте запустить.</p>
+            </div>
+        </section>
+
+        <button class="btn" onclick="startDownload()">СКАЧАТЬ BETA 4 (3,7 GB)</button>
+    </main>
+
+    <footer>
+        <p>© 2026 koksh-team. Все права защищены, но мы не уверены.</p>
+        <p>Сделано с агрессией и ненавистью к Майнкрафту. (Ты не понимаешь что между Майнкрафтом и ГТА нету разницы)</p>
+    </footer>
+
+    <script>
+        function startDownload() {
+            const messages = [
+                "Инициализация скачивания...",
+                "Ой, мы забыли написать ядро.",
+                "Пытаемся скомпилировать систему из мемов...",
+                "Ошибка 404: Совесть разработчика не найдена.",
+                "Ладно, просто скачай Ubuntu."
+            ];
+
+            let i = 0;
+            alert(messages[i]);
+
+            const interval = setInterval(() => {
+                i++;
+                if (i < messages.length) {
+                    alert(messages[i]);
+                } else {
+                    clearInterval(interval);
+                }
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
