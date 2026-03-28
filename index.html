@@ -93,9 +93,52 @@
             text-shadow: 0 0 5px #00ff00;
         }
 
+        /* Стили для панели информации */
+        .info-panel {
+            background: rgba(10, 10, 10, 0.85);
+            border: 2px dashed #00ff00;
+            padding: 30px;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+        }
+
+        .info-panel h3 {
+            color: #ff00ff;
+            text-shadow: 0 0 8px #ff00ff;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .info-panel h4 {
+            color: #00ff00;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .info-panel ul {
+            list-style-type: square;
+            color: #00ff00;
+            padding-left: 20px;
+        }
+
+        .info-panel li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .info-panel p {
+            color: #00ff00;
+            line-height: 1.4;
+        }
+
         .btn {
             display: inline-block;
-            margin: 40px;
+            margin: 20px 40px 60px 40px;
             padding: 20px 50px;
             font-size: 1.8em;
             color: #0a0a0a;
@@ -121,6 +164,28 @@
             color: #555;
             border-top: 1px solid #333;
             background: #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-text {
+            margin: 5px 0;
+        }
+
+        /* Иконка Телеграма */
+        .tg-icon {
+            width: 45px;
+            height: 45px;
+            fill: #ff00ff;
+            transition: fill 0.3s, filter 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .tg-icon:hover {
+            fill: #00ff00;
+            filter: drop-shadow(0 0 15px #00ff00);
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -147,12 +212,39 @@
             </div>
         </section>
 
+        <section class="info-panel">
+            <h3>Чейнджлог Beta 4 (Изменения):</h3>
+            <ul>
+                <li>Исправлена критическая ошибка которая не давала установить систему (связана с Plymouth).</li>
+                <li>Добавлены 2 новых ролика для автозапуска.</li>
+                <li>В иконках Hannah Montana Linux был заменен логотип на kokshOS (start-here-kde.png).</li>
+                <li>По умолчанию в качестве шапки окон используется Oxygen.</li>
+                <li>Удалены лишние языки (сделано в качестве наказания для тех кто игнорирует нужные языки).</li>
+                <li>Браузер Mozilla Firefox отныне называется koksharik Firepanda.</li>
+                <li>Добавлен ярлык (в меню приложений) для тех кто хочет купить флешку.</li>
+                <li>Установлены приложения для записи образов на флешки.</li>
+            </ul>
+
+            <h4>Примечание:</h4>
+            <p>kokshOS (как и KDE neon) не поддерживает установку системы на компьютеры с BIOS, нужен UEFI.</p>
+
+            <h4>Нужные языки:</h4>
+            <p>Английский, польский, русский, украинский и китайский.</p>
+        </section>
+
         <button class="btn" onclick="startDownload()">СКАЧАТЬ BETA 4 (3,7 GB)</button>
     </main>
 
     <footer>
-        <p>© 2026 koksh-team. Все права защищены, но мы не уверены.</p>
-        <p>Сделано с агрессией и ненавистью к Майнкрафту. (Ты не понимаешь что между Майнкрафтом и ГТА нету разницы)</p>
+        <p class="footer-text">© 2026 koksh-team. Все права защищены, но мы не уверены.</p>
+        <p class="footer-text">Сделано с агрессией и ненавистью к Майнкрафту. (Ты не понимаешь что между Майнкрафтом и ГТА нету разницы)</p>
+
+        <!-- Вставь свою ссылку на Телеграм в href ниже вместо # -->
+        <a href="https://t.me/+8RRKuqhzmjJkNWU0" target="_blank" title="Наш Telegram">
+            <svg class="tg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.666 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+        </a>
     </footer>
 
     <script>
